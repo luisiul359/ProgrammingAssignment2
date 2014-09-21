@@ -5,8 +5,10 @@ x <- matrix(runif(v*v),nrow=v)
 m <- makeCacheMatrix(x)
 
 ptm <- proc.time()
-dummy<-cacheSolve(m)
+dummy1<-cacheSolve(m)
 proc.time() - ptm
 ptm <- proc.time()
-dummy<-cacheSolve(1m)
+dummy2<-cacheSolve(m)
 proc.time() - ptm
+
+identical(dummy1,dummy2)
